@@ -7,15 +7,15 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class GreatingTest {
 
+    private Greating greating;
+
     @BeforeEach
     void setUp() {
-
+        greating = new Greating();
     }
 
     @Test
     void shouldReturnHelloWorld() {
-        Greating greating = new Greating();
-
         String result = greating.helloWorld();
 
         assertEquals("Hello World", result);
@@ -23,8 +23,6 @@ class GreatingTest {
 
     @Test
     void shouldReturnHelloWorldWithName() {
-        Greating greating = new Greating();
-
         String result = greating.helloWorld("Rodri");
 
         assertEquals("Hello Rodri", result);
