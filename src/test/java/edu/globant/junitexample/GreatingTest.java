@@ -11,11 +11,15 @@ class GreatingTest {
 
     @BeforeEach
     void setUp() {
+        System.out.println("Method: setUp");
+
         greating = new Greating();
     }
 
     @Test
     void shouldReturnHelloWorld() {
+        System.out.println("Method: shouldReturnHelloWorld");
+
         String result = greating.helloWorld();
 
         assertEquals("Hello World", result);
@@ -23,6 +27,8 @@ class GreatingTest {
 
     @Test
     void shouldReturnHelloWorldWithName() {
+        System.out.println("Method: shouldReturnHelloWorldWithName");
+
         String result = greating.helloWorld("Rodri");
 
         assertEquals("Hello Rodri", result);
