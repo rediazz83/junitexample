@@ -1,5 +1,6 @@
 package edu.globant.junitexample;
 
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -32,5 +33,10 @@ class GreatingTest {
         String result = greating.helloWorld("Rodri");
 
         assertEquals("Hello Rodri", result);
+    }
+
+    @AfterEach
+    void tearDown() {
+        System.out.println("Method: tearDown");
     }
 }
