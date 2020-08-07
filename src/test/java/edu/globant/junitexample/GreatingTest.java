@@ -1,14 +1,17 @@
 package edu.globant.junitexample;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class GreatingTest {
 
     private Greating greating;
+
+    @BeforeAll
+    public static void beforeClass() {
+        System.out.println("Before - I am only called once!!");
+    }
 
     @BeforeEach
     void setUp() {
@@ -38,5 +41,10 @@ class GreatingTest {
     @AfterEach
     void tearDown() {
         System.out.println("Method: tearDown");
+    }
+
+    @AfterAll
+    public static void afterClass() {
+        System.out.println("After - I am only called once!!");
     }
 }
