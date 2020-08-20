@@ -1,5 +1,7 @@
 package edu.globant.junitexample.sfgpetclinic.controllers;
 
+import edu.globant.junitexample.sfgpetclinic.exceptions.ValueNotFoundException;
+
 public class IndexController {
 
     public String index(){
@@ -7,7 +9,7 @@ public class IndexController {
         return "index";
     }
 
-    public String oupsHandler(){
-        return "notimplemented";
+    public String oupsHandler() {
+        throw new ValueNotFoundException();
     }
 }

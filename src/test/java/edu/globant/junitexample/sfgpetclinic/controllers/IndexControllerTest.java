@@ -1,5 +1,6 @@
 package edu.globant.junitexample.sfgpetclinic.controllers;
 
+import edu.globant.junitexample.sfgpetclinic.exceptions.ValueNotFoundException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -21,8 +22,9 @@ class IndexControllerTest {
         assertEquals("index", controller.index(), "Wrong view returned");
     }
 
+    @DisplayName("Test throw ValueNotFoundException")
     @Test
     void oupsHandler() {
-        assertTrue("notimplemented".equals(controller.oupsHandler()), () -> "This is some expensive msg to build for my test");
+        assertThrows(ValueNotFoundException.class, () -> controller.oupsHandler());
     }
 }
