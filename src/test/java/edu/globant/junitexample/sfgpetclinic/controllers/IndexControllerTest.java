@@ -5,6 +5,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
 class IndexControllerTest {
@@ -20,6 +21,7 @@ class IndexControllerTest {
     @Test
     void index() {
         assertEquals("index", controller.index(), "Wrong view returned");
+        assertThat(controller.index()).isNotEqualTo("coso");
     }
 
     @DisplayName("Test throw ValueNotFoundException")
